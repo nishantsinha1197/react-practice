@@ -4,6 +4,7 @@ import Counter from './components/Counter'
 import List from './components/List'
 import ImageSlider from './components/ImageSlider/ImageSlider'
 import Checkbox from './components/Checkbox'
+import Login from './components/Login'
 
 function App() {
   const list = ['Apple','Banana','Mango','Orange','Pineapple','watermelon']
@@ -12,7 +13,8 @@ function App() {
     // <Counter/>
     // <List/>
     // <ImageSlider/>
-    <Checkbox/>
+    // <Checkbox/>
+    <Login/>
   )
 }
 
