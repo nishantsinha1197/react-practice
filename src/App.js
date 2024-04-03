@@ -6,6 +6,7 @@ import ImageSlider from './components/ImageSlider/ImageSlider'
 import Checkbox from './components/Checkbox'
 import Login from './components/Login'
 import ProductCard from './components/Products'
+import FilterProductCard from './components/FilterProductCard'
 
 function App() {
   const list = ['Apple','Banana','Mango','Orange','Pineapple','watermelon']
@@ -16,7 +17,8 @@ function App() {
     // <ImageSlider/>
     // <Checkbox/>
     // <Login/>
-    <ProductCard/>
+    // <ProductCard/>
+    <FilterProductCard/>
   )
 }
 
