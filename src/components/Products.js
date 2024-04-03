@@ -39,7 +39,7 @@ function ProductCard() {
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                {item.name}
+                                {item.title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {item.description}

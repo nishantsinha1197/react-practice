@@ -17,8 +17,8 @@ function App() {
     // <ImageSlider/>
     // <Checkbox/>
     // <Login/>
-    // <ProductCard/>
-    <FilterProductCard/>
+    <ProductCard/>
+    // <FilterProductCard/>
   )
 }
 
