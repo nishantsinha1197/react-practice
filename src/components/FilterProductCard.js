@@ -4,6 +4,7 @@ import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 function FilterProductCard() {
     const [products, setProducts] = useState([])
     const [searchTerm,setSearchTerm] = useState('')
+    const [sortOption,setSortOption] = useState('A-Z')
     async function fetchProduct() {
         try {
             let response = await axios.get('https://dummyjson.com/products');
@@ -19,15 +20,42 @@ function FilterProductCard() {
         setSearchTerm(e.target.value)
         console.log(e.target.value);
     }
+    function handleSortChange(e){
+        setSortOption(e.target.value)
+    }
+    const sortedProducts = [...products]
+    console.log(sortedProducts);
 
-    const filteredProducts = products.filter((item) => {
+    switch(sortOption){
+        case 'A-Z':
+            sortedProducts.sort((a,b)=>a.title.localeCompare(b.title))
+            break;
+        case 'Z-A':
+            sortedProducts.sort((a,b)=>b.title.localeCompare(a.title))
+            break;
+        case '1-9':
+            sortedProducts.sort((a,b)=>a.price-b.price)
+            break;
+        case '9-1':
+            sortedProducts.sort((a,b)=>b.price-a.price)
+            break;
+        default:
+            break
+    }
+    const filteredProducts = sortedProducts.filter((item) => {
         return item.title.toLowerCase().includes(searchTerm);
     });
     console.log(filteredProducts);
     return (
         <>
             <h1 style={{textAlign:'center'}}>E-COM STORE</h1>
-            <input type='text' placeholder='Search your product' style={{marginLeft:"130px"}} onChange={searchHandler}/>
+            <input type='text' placeholder='Search your product' style={{marginLeft:"140px"}} onChange={searchHandler}/>
+            <select onChange={handleSortChange}>
+                <option value='A-Z'>A-Z</option>
+                <option value='Z-A'>Z-A</option>
+                <option value='1-9'>1-9</option>
+                <option value='9-1'>9-1</option>
+            </select>
             <div style={{display:'flex',flexWrap:'wrap',justifyContent:"center"}}>
             {
                 filteredProducts.map((item, index) => (
