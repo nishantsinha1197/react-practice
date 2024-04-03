@@ -29,7 +29,7 @@ function ProductCard() {
                     //     <a href="#" class="btn btn-primary">Go somewhere</a>
                     // </div>
                     // </div>
-                    <Card key={index} style={{ width: '300px' , height:"300px", margin:'10px', border:'1px black solid' }}>
+                    <Card key={index} style={{ width: '300px' , height:"350px", margin:'10px', border:'1px black solid' }}>
                         <CardMedia
                             component="img"
                             alt="Image"

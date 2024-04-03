@@ -31,7 +31,7 @@ function FilterProductCard() {
             <div style={{display:'flex',flexWrap:'wrap',justifyContent:"center"}}>
             {
                 filteredProducts.map((item, index) => (
-                    <Card key={index} style={{ width: '300px' , height:"300px", margin:'10px', border:'1px black solid' }}>
+                    <Card key={index} style={{ width: '300px' , height:"350px", margin:'10px', border:'1px black solid' }}>
                         <CardMedia
                             component="img"
                             alt="Image"
